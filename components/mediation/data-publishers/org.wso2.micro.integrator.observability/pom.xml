@@ -24,6 +24,7 @@
         <artifactId>data-publishers</artifactId>
         <groupId>org.wso2.ei</groupId>
         <version>1.2.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -40,18 +41,10 @@
             <groupId>io.prometheus</groupId>
             <artifactId>simpleclient</artifactId>
         </dependency>
-        <dependency>
-            <groupId>io.prometheus</groupId>
-            <artifactId>simpleclient_common</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.prometheus</groupId>
-            <artifactId>simpleclient_httpserver</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.prometheus</groupId>
-            <artifactId>simpleclient_servlet</artifactId>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>io.prometheus</groupId>-->
+            <!--<artifactId>simpleclient_common</artifactId>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>io.prometheus</groupId>
             <artifactId>simpleclient_hotspot</artifactId>
@@ -77,8 +70,12 @@
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Axis2Module>${project.artifactId}-${project.version}</Axis2Module>
                         <Export-Package>
-                            org.wso2.micro.integrator.prometheus.observability.* ;version="${project.version}"
+                            org.wso2.micro.integrator.observability.* ;version="${project.version}",
+                            io.prometheus.client.*;version="${prometheus.version}",
+                            io.prometheus.client.hotspot;version="${prometheus.version}",
                         </Export-Package>
+                        <Private-Package>io.prometheus.client.*</Private-Package>
+                        <Private-Package>io.prometheus.client.hotspot</Private-Package>
                         <Import-Package>
                             org.wso2.carbon.inbound.endpoint.internal.http.api ;version="${project.version}",
                             *;resolution:=optional

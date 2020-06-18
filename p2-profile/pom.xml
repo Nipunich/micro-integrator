@@ -140,6 +140,9 @@
                                 <featureArtifactDef>
                                     org.wso2.ei:org.wso2.micro.integrator.analytics.messageflow.data.publisher.feature:${project.version}
                                 </featureArtifactDef>
+                                <featureArtifactDef>
+                                    org.wso2.ei:org.wso2.micro.integrator.observability.feature:${project.version}
+                                </featureArtifactDef>
 
 
                                 <featureArtifactDef>
@@ -334,6 +337,10 @@
                                 </feature>
                                 <feature>
                                     <id>org.wso2.micro.integrator.analytics.messageflow.data.publisher.feature.group</id>
+                                    <version>${project.version}</version>
+                                </feature>
+                                <feature>
+                                    <id>org.wso2.micro.integrator.observability.feature.group</id>
                                     <version>${project.version}</version>
                                 </feature>
 
