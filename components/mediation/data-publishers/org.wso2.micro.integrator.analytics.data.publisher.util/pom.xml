@@ -65,6 +65,8 @@
                         <Export-Package>
                             org.wso2.micro.integrator.analytics.data.publisher.util.*
                         </Export-Package>
+                        <Private-Package>io.prometheus.client.*</Private-Package>
+                        <Private-Package>io.prometheus.client.hotspot</Private-Package>
                         <Import-Package>
                             org.apache.commons.logging.*; version="${import.package.version.commons.logging}",
                             *;resolution:=optional
